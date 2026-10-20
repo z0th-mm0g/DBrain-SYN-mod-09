@@ -1,3 +1,5 @@
+<img width="1309" height="132" alt="Screenshot 2026-10-16 at 9 24 00 AM" src="https://github.com/user-attachments/assets/181fa560-8f13-453d-9398-accc68d566b0" />
+
 # DBrain-SYN-mod
 
 Mods para **Elektron Digitakt mk1, OS 1.54**, hechos con [elekloader](https://github.com/irpina/elekloader).
