@@ -1,0 +1,76 @@
+{
+ "id": "drumbrain",
+ "version": "0.7",
+ "license": "GPL-2.0-or-later",
+ "title": "DRUMBRAIN",
+ "category": "Sequencer",
+ "author": "Heal Youth",
+ "description": "DRUMBRAIN: two SRC machines, DB HOUSE and DB BREAKS (the style). A track on one of them plays a generated rhythm from DrumBrain's Markov model in that style, keeping its instrument (T1 BD, T2 SD, T3 CP, T4 RS, T5 CH, T6 OH, T7 TOM, T8 CY), and plays its sample as ONESHOT. [TRK] + the same [TRIG 1-8] twice: a new rhythm for that track; [TRK] + [FUNC]: for all. Needs seq-events and machine-pages.",
+ "device": "digitakt-mk1",
+ "os": "1.53",
+ "ports": {
+  "1.54": {}
+ },
+ "sources": [
+  "drumbrain.c",
+  "dbmodel.c"
+ ],
+ "cflags": [
+  "-Os"
+ ],
+ "subscribe": [
+  {
+   "event": "ev_tick",
+   "fn": "db_tick",
+   "order": 50
+  },
+  {
+   "event": "ev_gen_trig",
+   "fn": "db_trig",
+   "order": 50
+  },
+  {
+   "event": "ev_fire_vel",
+   "fn": "db_vel",
+   "order": 50
+  },
+  {
+   "event": "ev_key",
+   "fn": "db_key",
+   "order": 40
+  },
+  {
+   "event": "ev_draw",
+   "fn": "db_draw",
+   "order": 80
+  },
+  {
+   "event": "ev_fire_cond",
+   "fn": "db_cond",
+   "order": 50
+  }
+ ],
+ "requires": [
+  "core",
+  "seq-events",
+  "machine-pages"
+ ],
+ "resources": {
+  "names": [
+   "drumbrain",
+   "machine:41",
+   "machine:42"
+  ],
+  "core": "3.0"
+ },
+ "machines": [
+  {
+   "id": 41,
+   "descriptor": "db_house"
+  },
+  {
+   "id": 42,
+   "descriptor": "db_breaks"
+  }
+ ]
+}

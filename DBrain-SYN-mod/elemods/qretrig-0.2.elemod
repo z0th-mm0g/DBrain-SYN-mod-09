@@ -1,0 +1,297 @@
+{
+ "elemod": 2,
+ "id": "qretrig",
+ "version": "0.2",
+ "title": "QRETRIG",
+ "description": "Quantized retrig: hold [TRIG 14], [TRIG 15] or [TRIG 16] (grid recording off) and the active audio track also fires every 4th, 2nd or single step, on the sequencer's grid. With grid recording on, or with [FUNC], the keys are stock. Their LEDs are bright blue while they are retrig keys, white while held.",
+ "category": "Performance",
+ "author": "Heal Youth",
+ "license": "GPL-2.0-or-later",
+ "target": {
+  "device": "digitakt-mk1",
+  "product": "Digitakt mk1",
+  "os": "1.54",
+  "syx_sha256": "f78ba80fa7b1da5fb0e1ff61ad61e9e71aafe79f4364fc49679f3651353e3cf6",
+  "section3_sha256": "5c58bf9e3949ef09977c5fc007a61e8d026931f67f1621238379dfb8ee4d31a2",
+  "section3_len": 2479680
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 347,
+   "parts": [
+    [
+     "hex",
+     "202f0004720eb0816d187210b0816e122f2f00082f004eb900000000508f2f400008"
+    ],
+    [
+     "stock",
+     "0x400e691c",
+     10
+    ],
+    [
+     "hex",
+     "4ef9400e692600002f032f027402206f00102228"
+    ],
+    [
+     "stock",
+     "0x400668c6",
+     8
+    ],
+    [
+     "hex",
+     "ffdbb4806578242800107001c0820802000067547008c08244c26a12b2b90000000057c171014480241f261f4e7516394208d68066f20802000166ec2079000000007407b48865e023c80000000041f90000000071b018db23c10000000023c000000000700160c0b2b90000000066b842b90000000042b90000000060e6428060a62239000000002f02202f000c206f00144a816718227900000000b3ef0008660c4c4108024a82660470018190241f4e752239000000002f02202f000c4a81671c207900000000b1ef000866104c4108024a826608206f001070012080241f4e7512394208d680202f00084a016614"
+    ],
+    [
+     "stock",
+     "0x400084f2",
+     8
+    ],
+    [
+     "hex",
+     "0017b0b900000000660470144e75700e60fa0000ffffffff040201"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 8
+  }
+ },
+ "symbols": {
+  "held": [
+   ".bss",
+   0
+  ],
+  "rtrack": [
+   ".run",
+   340
+  ],
+  "divs": [
+   ".run",
+   344
+  ],
+  "rdiv": [
+   ".bss",
+   4
+  ],
+  "qr_led_colour": [
+   ".run",
+   298
+  ],
+  "qr_led_wrap": [
+   ".run",
+   0
+  ],
+  "qr_key": [
+   ".run",
+   52
+  ],
+  "qr_trig": [
+   ".run",
+   202
+  ],
+  "qr_cond": [
+   ".run",
+   250
+  ]
+ },
+ "exports": [
+  "qr_cond",
+  "qr_key",
+  "qr_led_colour",
+  "qr_led_wrap",
+  "qr_trig"
+ ],
+ "imports": [
+  "fw_active_track"
+ ],
+ "weak": [],
+ "relocs": [
+  [
+   ".run",
+   24,
+   "abs32",
+   "sec:.run",
+   298
+  ],
+  [
+   ".run",
+   102,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   134,
+   "abs32",
+   "sym:fw_active_track",
+   0
+  ],
+  [
+   ".run",
+   146,
+   "abs32",
+   "sec:.run",
+   340
+  ],
+  [
+   ".run",
+   152,
+   "abs32",
+   "sec:.run",
+   344
+  ],
+  [
+   ".run",
+   162,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   168,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   178,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   186,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   192,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   204,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   224,
+   "abs32",
+   "sec:.run",
+   340
+  ],
+  [
+   ".run",
+   252,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   268,
+   "abs32",
+   "sec:.run",
+   340
+  ],
+  [
+   ".run",
+   324,
+   "abs32",
+   "sec:.bss",
+   0
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x400e691c",
+   "len": 10,
+   "stock_sha256": "d1fc26f985f77a2c72c211998c753dad7c323c0b229c9164579f9e3c5d4e9ab6",
+   "new": "4ef9000000004e714e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:qr_led_wrap",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [
+  {
+   "to": "ev_key",
+   "order": 30,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:qr_key",
+     0
+    ]
+   ],
+   "claims": []
+  },
+  {
+   "to": "ev_gen_trig",
+   "order": 60,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:qr_trig",
+     0
+    ]
+   ],
+   "claims": []
+  },
+  {
+   "to": "ev_fire_cond",
+   "order": 60,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:qr_cond",
+     0
+    ]
+   ],
+   "claims": []
+  }
+ ],
+ "copied": [],
+ "resources": {
+  "names": [
+   "qretrig"
+  ]
+ },
+ "requires": [
+  "core",
+  "seq-events"
+ ],
+ "conflicts": [],
+ "build": {
+  "sources": {
+   "qretrig.c": "becf4009855d175f23f2f7a05463bfc0af151bd19f0289521a3a2813d9c9bc0b",
+   "qr_led.s": "505da7f8f710392d56aeac64058a059e3bfa90227b803776f5019d0daa04750c"
+  }
+ },
+ "signature": null
+}

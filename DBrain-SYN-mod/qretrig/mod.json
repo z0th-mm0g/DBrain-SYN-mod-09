@@ -1,0 +1,52 @@
+{
+ "id": "qretrig",
+ "version": "0.2",
+ "license": "GPL-2.0-or-later",
+ "title": "QRETRIG",
+ "category": "Performance",
+ "author": "Heal Youth",
+ "description": "Quantized retrig: hold [TRIG 14], [TRIG 15] or [TRIG 16] (grid recording off) and the active audio track also fires every 4th, 2nd or single step, on the sequencer's grid. With grid recording on, or with [FUNC], the keys are stock. Their LEDs are bright blue while they are retrig keys, white while held.",
+ "device": "digitakt-mk1",
+ "os": "1.54",
+ "sources": [
+  "qretrig.c",
+  "qr_led.s"
+ ],
+ "cflags": [
+  "-Os"
+ ],
+ "subscribe": [
+  {
+   "event": "ev_key",
+   "fn": "qr_key",
+   "order": 30
+  },
+  {
+   "event": "ev_gen_trig",
+   "fn": "qr_trig",
+   "order": 60
+  },
+  {
+   "event": "ev_fire_cond",
+   "fn": "qr_cond",
+   "order": 60
+  }
+ ],
+ "requires": [
+  "core",
+  "seq-events"
+ ],
+ "resources": {
+  "names": [
+   "qretrig"
+  ]
+ },
+ "sites": [
+  {
+   "addr": "0x400e691c",
+   "stock": "4e56ffe041f94018e924",
+   "op": "jmp",
+   "target": "qr_led_wrap"
+  }
+ ]
+}
