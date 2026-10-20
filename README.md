@@ -46,6 +46,9 @@ Retrig cuantizado sobre la pista seleccionada.
 - Con REC encendido, o con [FUNC], las teclas funcionan como siempre.
 - Lo más rápido es 1/16 (un paso).
 
+
+<img width="714" height="342" alt="HealYouth-dinsynktak MOD-qretrig-DNT07" src="https://github.com/user-attachments/assets/2fcc6dba-4698-44dd-832e-6e8cbdd62358" />
+
 ## Contenido
 
 - `drumbrain/`: fuentes del mod. `genmodel.py` convierte el `model.js` de DrumBrain en `dbmodel.c`.
@@ -69,5 +72,7 @@ encendido, y LEDs de las teclas 14-16 en azul. DB07 confirmado en el equipo.
   (`licenses/DrumBrain-MIT.txt`). Original: https://github.com/mganss/DrumBrain
 - **elekloader** y **digiemu**: https://github.com/irpina
 - **Digi Mono, Digi Macro, DH-101**: https://github.com/gdeo607/digi1_mods
+
+<img width="512" height="256" alt="preview_mix-collage" src="https://github.com/user-attachments/assets/6fb493f7-930b-46a5-b2e5-d032d8aea3bf" />
 
 Mods no oficiales, sin relación con Elektron. Usar bajo tu propio riesgo.
